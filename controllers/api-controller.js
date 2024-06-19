@@ -44,7 +44,7 @@ export async function authenticateUser(request, response) {
     }
 }
 
-export async function showUserProfile(request, response) {
+export async function getUserInfo(request, response) {
     try {
         const userFound = await User.findById(request.userId);
 
