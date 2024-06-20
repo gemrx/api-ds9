@@ -75,5 +75,15 @@ export async function createProduct(request, response) {
     }
 }
 
+export async function getAllProducts(request, response) {
+    try {
+        const products = await Product.find(null, 'name description price');
+        response.status(200).json(products);
+    } catch (error) {
+        console.error(error);
+        response.status(500).json({ error: 'Internal error, failed to get all products' });
+    }
+}
+
 
 
